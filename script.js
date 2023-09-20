@@ -6,7 +6,7 @@ const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
 const textBox = document.getElementById('text-box');
 
-function switchModes(properties) {
+function toggleLightDarkMode(properties) {
     nav.style.backgroundColor = properties.navBackgroundColor
     textBox.style.backgroundColor = properties.textBoxBackgroundColor
 
@@ -35,7 +35,7 @@ function switchTheme(event) {
             image2: 'img/undraw_feeling_proud_dark.svg',
             image3: 'img/undraw_conceptual_idea_dark.svg'
         }
-        switchModes(darkProperties);
+        toggleLightDarkMode(darkProperties);
     } else {
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light')
@@ -49,7 +49,7 @@ function switchTheme(event) {
             image2: 'img/undraw_feeling_proud_light.svg',
             image3: 'img/undraw_conceptual_idea_light.svg'
         }
-        switchModes(lightProperties);
+        toggleLightDarkMode(lightProperties);
     }
 }
 
@@ -71,7 +71,7 @@ if (currentTheme) {
             image2: 'img/undraw_feeling_proud_dark.svg',
             image3: 'img/undraw_conceptual_idea_dark.svg'
         }
-        switchModes(darkProperties);
+        toggleLightDarkMode(darkProperties);
     } else {
         toggleSwitch.checked = false;
         const lightProperties = {
@@ -84,6 +84,6 @@ if (currentTheme) {
             image2: 'img/undraw_feeling_proud_light.svg',
             image3: 'img/undraw_conceptual_idea_light.svg'
         }
-        switchModes(lightProperties);
+        toggleLightDarkMode(lightProperties);
     }
 }
